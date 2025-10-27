@@ -1,5 +1,5 @@
 # app/db/init_db.py
-from .session import engine
+from .session import engine #interface to db
 from .base import Base
 from app.models import user, status, source, tag, application, update  # import all models
 
