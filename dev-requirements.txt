@@ -1,0 +1,18 @@
+# --- Testing ---
+pytest==8.3.2
+httpx==0.27.0  # HTTP client for API testing
+
+# --- Code Quality ---
+black==24.8.0
+flake8==7.1.1
+isort==5.13.2  # for import sorting
+mypy==1.11.2   # static type checking
+
+# --- Logging / Debugging (optional for richer dev logs) ---
+structlog==24.2.0
+loguru==0.7.2
+
+# --- Developer Experience ---
+ipython==8.26.0
+python-dotenv==1.0.1
+
