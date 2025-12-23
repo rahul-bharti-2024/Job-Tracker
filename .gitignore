@@ -1,0 +1,72 @@
+# ============================
+# Python
+# ============================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.eggs/
+dist/
+build/
+
+# Virtual environments
+venv/
+.env/
+.venv/
+trackerenv/
+
+# ============================
+# Environment & Secrets
+# ============================
+.env
+.env.*
+*.env
+
+# ============================
+# Logs
+# ============================
+*.log
+
+# ============================
+# OS / Editor junk
+# ============================
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ============================
+# Database
+# ============================
+# Local SQLite (if ever used)
+*.sqlite3
+
+# PostgreSQL dumps
+*.sql.dump
+*.dump
+
+# ============================
+# Docker
+# ============================
+# Docker runtime artifacts 
+docker-data/
+.pgdata/
+
+# ============================
+# Caches / Tooling
+# ============================
+.mypy_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ============================
+# Temporary / scratch files
+# ============================
+rough.py
+tmp/
+temp/

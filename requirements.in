@@ -1,0 +1,43 @@
+# ----------------------------
+# Core API
+# ----------------------------
+fastapi
+uvicorn[standard]
+
+# ----------------------------
+# Database & ORM
+# ----------------------------
+SQLAlchemy
+psycopg2-binary
+alembic
+
+# ----------------------------
+# Auth & Security
+# ----------------------------
+python-jose
+passlib[bcrypt]
+
+
+# ----------------------------
+# Validation & Settings
+# ----------------------------
+pydantic
+pydantic-settings
+python-dotenv
+
+# ----------------------------
+# Background Jobs
+# ----------------------------
+celery
+redis
+
+# ----------------------------
+# Utilities
+# ----------------------------
+httpx
+python-multipart
+
+# ----------------------------
+# Logging / Observability
+# ----------------------------
+structlog
