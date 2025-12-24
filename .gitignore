@@ -70,3 +70,5 @@ htmlcov/
 rough.py
 tmp/
 temp/
+requirements_backups
+output.txt

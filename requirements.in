@@ -1,3 +1,53 @@
+# # ----------------------------
+# # Core API
+# # ----------------------------
+# fastapi
+# uvicorn[standard]
+
+# # ----------------------------
+# # Database & ORM
+# # ----------------------------
+# SQLAlchemy
+# psycopg2-binary
+# alembic
+
+# # ----------------------------
+# # Auth & Security
+# # ----------------------------
+# python-jose[cryptography]
+# passlib[bcrypt]
+# email-validator
+
+# # ----------------------------
+# # Validation & Settings
+# # ----------------------------
+# pydantic[email]
+# pydantic-settings
+# python-dotenv
+
+# # ----------------------------
+# # Background Jobs
+# # ----------------------------
+# celery
+# redis
+
+# # ----------------------------
+# # Utilities
+# # ----------------------------
+# httpx
+# python-multipart
+
+# # ----------------------------
+# # Logging / Observability
+# # ----------------------------
+# structlog
+
+# # ----------------------------
+# # Testing
+# # ----------------------------
+# pytest
+# pytest-asyncio
+
 # ----------------------------
 # Core API
 # ----------------------------
@@ -14,14 +64,15 @@ alembic
 # ----------------------------
 # Auth & Security
 # ----------------------------
-python-jose
+python-jose[cryptography]
 passlib[bcrypt]
-
+email-validator
+bcrypt<4.0
 
 # ----------------------------
 # Validation & Settings
 # ----------------------------
-pydantic
+pydantic[email]
 pydantic-settings
 python-dotenv
 
@@ -41,3 +92,10 @@ python-multipart
 # Logging / Observability
 # ----------------------------
 structlog
+
+# ----------------------------
+# Testing
+# ----------------------------
+pytest
+pytest-asyncio
+pip-tools

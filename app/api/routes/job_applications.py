@@ -6,19 +6,25 @@ from app.api.schemas.job_applications import(
     CreateApplicationRequest, UpdateApplicationRequest
 
 )
+from app.api.dependencies.auth import get_current_user
+from app.db.models.User import User
+
+
 
 router= APIRouter(prefix="/applications", tags=["job_applications"])
 
 USER_ID=1  # Placeholder for authenticated user ID
+
 @router.post("/")
 def create_application(
     request: CreateApplicationRequest,
     session: Session = Depends(get_session),
+    user: User = Depends(get_current_user),
 ):
     service= JobApplicationService(session)
     try:
         application= service.create_application(
-            user_id= USER_ID,
+            user_id= user.user_id,
             **request.model_dump(),
         )
         return application
