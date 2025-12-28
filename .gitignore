@@ -70,5 +70,7 @@ htmlcov/
 rough.py
 tmp/
 temp/
-requirements_backups
+requirements_backups/
 output.txt
+alembic.ini
+alembic/

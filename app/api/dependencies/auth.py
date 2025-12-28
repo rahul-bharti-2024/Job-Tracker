@@ -9,26 +9,20 @@ from sqlalchemy.orm import Session
 from jose import jwt, JWTError
 
 from app.db.session import get_session
-from app.db.models.User import User
-from app.core.security import SECRET_KEY, ALGORITHM
+from app.db.models.user import User
+from app.core.jwt import SECRET_KEY, ALGORITHM
 
 # oauth2_scheme = OAuth2PasswordBearer(tokenUrl="/auth/login")
 
 security = HTTPBearer()
 
-def get_current_user(
+def get_current_user_id(
     credentials: HTTPAuthorizationCredentials = Depends(security),
-    session: Session = Depends(get_session),
-) -> User:
+) -> int:
     try:
-        token = credentials.credentials
-        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
-        user_id = int(payload.get("sub"))
-    except (JWTError, ValueError):
+        payload = jwt.decode(credentials.credentials, SECRET_KEY, algorithms=[ALGORITHM])
+        return int(payload["sub"])
+    except Exception:
         raise HTTPException(status_code=401, detail="Invalid token")
 
-    user = session.get(User, user_id)
-    if not user:
-        raise HTTPException(status_code=401, detail="User not found")
 
-    return user
